@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express       = require('express');
 const session       = require('express-session');
 const hbs           = require('express-handlebars');
@@ -10,7 +11,7 @@ const app           = express();
 
 //? Conexion a la base de datos
 try {
-  mongoose.connect('mongodb+srv://eduardor9:W0DqlDCnIzUvQWyu@datosdb.vd8qp1i.mongodb.net/datosDB', {
+  mongoose.connect(process.env.MONGODB_CNN, {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
 	});    
